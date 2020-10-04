@@ -1,0 +1,11 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+
+<h2>{{post.title}}</h2>
+<span>{{post.created_on}}</span>
+<br><br>
+<div>
+    {{post.description}}
+</div>
+
+{% endblock %}

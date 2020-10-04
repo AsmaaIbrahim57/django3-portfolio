@@ -1,0 +1,22 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<div class="container text-center">
+    <h2>Hello there this is my Django with DB first project!</h2>
+
+    <div class=" container portfolio text-center">
+        {% for project in projects%}
+        <a href="{{project.url}}" class="card-link">
+            <div class="card" style="width: 18rem;">
+                <img src='{{project.image.url}}' class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{project.title}}</h5>
+                  <p class="card-text">{{project.description}}</p>
+                </div>
+              </div>
+        </a>
+        
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

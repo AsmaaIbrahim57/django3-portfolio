@@ -1,0 +1,42 @@
+{% extends 'portfolio/base.html' %}
+{% block content %}
+<div class="container">
+
+    <div class="page-intro container text-center">
+        <h1>
+            Hello Blogs!
+        </h1>
+        <span>
+            I've written {{posts.count}} posts.
+        </span>
+    </div>
+    <div class="body">
+        {% for post in posts %}
+            <div class="post " >
+                <a class="post-title" href="{% url 'blog:single' post.id %}">
+                    {{post.title}}
+                </a>
+                <span class="post-date">
+                    {{post.created_on|date:"M d Y"}}
+                </span>
+                <p class="post-description">
+                    {{post.description}}
+                </p>
+            </div>
+        {% endfor %}
+        
+    </div>
+</div>
+<style>
+.page-intro{
+    margin-top:3rem;
+    margin-bottom:5rem;
+}
+.post-title{
+    display:block;
+    font-size:18x;
+    font-weight:600;
+}
+</style>
+
+{% endblock %}
